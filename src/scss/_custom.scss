@@ -31,15 +31,15 @@ body {
     background-size: cover;
 
     &:nth-child(1) {
-      background-image: url("../public/images/cristian-escobar-abkEAOjnY0s-unsplash.webp");
+      background-image: url("/images/cristian-escobar-abkEAOjnY0s-unsplash.webp");
     }
 
     &:nth-child(2) {
-      background-image: url("../public/images/chris-lawton-5IHz5WhosQE-unsplash.webp");
+      background-image: url("/images/chris-lawton-5IHz5WhosQE-unsplash.webp");
     }
 
     &:nth-child(3) {
-      background-image: url("../public/images/aaron-burden-WS89mmrCU8U-unsplash.webp");
+      background-image: url("/images/aaron-burden-WS89mmrCU8U-unsplash.webp");
     }
   }
 }

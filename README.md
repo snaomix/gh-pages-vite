@@ -7,7 +7,7 @@ Viteの[ガイド]、[静的サイトのデプロイ]ページにしたがって
 デザインは[Bootstrap] v5、画像は[unsplash]のものを使用します。
 
 ## note:
-* Vite v4.5以降を使用しています
+* Vite v5以降を使用しています
 * Node.js v20以降(see [Node.js release schedule]) ＋dart-sassを使用
 
 ## how to start
