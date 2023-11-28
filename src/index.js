@@ -5,7 +5,7 @@ import "bootstrap/js/src/dropdown";
 
 import "./scss/style.scss";
 
-import { sub } from './module/sub.js'
+import { sub } from "./module/sub.js";
 sub();
 
 // ref: https://getbootstrap.com/docs/5.3/assets/js/color-modes.js
@@ -22,16 +22,11 @@ sub();
       return storedTheme;
     }
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   };
 
   const setTheme = (theme) => {
-    if (
-      theme === "auto" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    if (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.setAttribute("data-bs-theme", "dark");
     } else {
       document.documentElement.setAttribute("data-bs-theme", theme);
@@ -49,12 +44,8 @@ sub();
 
     const themeSwitcherText = document.querySelector("#bd-theme-text");
     const activeThemeIcon = document.querySelector(".theme-icon-active use");
-    const btnToActive = document.querySelector(
-      `[data-bs-theme-value="${theme}"]`
-    );
-    const svgOfActiveBtn = btnToActive
-      .querySelector("svg use")
-      .getAttribute("href");
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+    const svgOfActiveBtn = btnToActive.querySelector("svg use").getAttribute("href");
 
     document.querySelectorAll("[data-bs-theme-value]").forEach((element) => {
       element.classList.remove("active");
@@ -72,14 +63,12 @@ sub();
     }
   };
 
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      const storedTheme = getStoredTheme();
-      if (storedTheme !== "light" && storedTheme !== "dark") {
-        setTheme(getPreferredTheme());
-      }
-    });
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    const storedTheme = getStoredTheme();
+    if (storedTheme !== "light" && storedTheme !== "dark") {
+      setTheme(getPreferredTheme());
+    }
+  });
 
   window.addEventListener("DOMContentLoaded", () => {
     showActiveTheme(getPreferredTheme());
