@@ -5,7 +5,6 @@ import globals from "globals";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
-  eslintConfigPrettier,
   {
     files: ['**/*.js'],
     rules: {
@@ -36,4 +35,5 @@ export default [
       parser: htmlParser,
     },
   },
+  eslintConfigPrettier,
 ];
