@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/snaomix/gh-pages-vite#readme",
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
+    "@eslint/js": "^9.24.0",
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "@html-eslint/eslint-plugin": "^0.37.0",
     "@html-eslint/parser": "^0.37.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "prettier": "^3.5.3",
     "sass": "1.77.6",
@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.5"
   }
 }
