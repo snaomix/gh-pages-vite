@@ -74,8 +74,8 @@ npm run format
 
 [GitHub Pages]: https://docs.github.com/ja/pages
 [GitHub Actions]: https://docs.github.com/ja/actions
-[ガイド]: https://ja.vitejs.dev/guide/
-[静的サイトのデプロイ]: https://ja.vitejs.dev/guide/static-deploy.html
+[ガイド]: https://ja.vite.dev/guide/
+[静的サイトのデプロイ]: https://ja.vite.dev/guide/static-deploy.html
 [Bootstrap]: https://getbootstrap.com/
 [unsplash]: https://unsplash.com/
 [Stylelint]: https://stylelint.io/
