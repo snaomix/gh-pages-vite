@@ -30,10 +30,10 @@
   },
   "homepage": "https://github.com/snaomix/gh-pages-vite#readme",
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.38.0",
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "@html-eslint/eslint-plugin": "^0.47.0",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "sass": "1.77.6",
