@@ -7,8 +7,8 @@ Viteの[ガイド]、[静的サイトのデプロイ]ページにしたがって
 デザインは[Bootstrap] v5、画像は[unsplash]のものを使用します。
 
 ## note:
-* Vite v5以降を使用しています
-* Node.js v22以降(see [Node.js release schedule])
+* Vite v7以降を使用しています
+* Node.js v24以降(see [Node.js release schedule])
 * [GitHub Actions]を使用してデプロイ
 * [Stylelint]、[Prettier]、[ESLint]を使用(HTMLHintによるチェック廃止)
 
