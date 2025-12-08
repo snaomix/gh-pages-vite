@@ -8,12 +8,15 @@
     "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "lint:css": "stylelint src/**/*.scss",
-    "check:css": "prettier --check 'src/**/*.scss'",
-    "format:css": "prettier --write 'src/**/*.scss'",
-    "format": "prettier --write 'src/**/*.{js,json}'",
-    "lint:js": "eslint 'src/**/*.js'",
-    "lint:html": "eslint 'src/**/*.html'"
+    "lint:css": "stylelint **/*.scss",
+    "fix:css": "stylelint --fix **/*.scss",
+    "check:css": "prettier --check '**/*.scss'",
+    "check:js": "prettier --check '**/*.{js,json}'",
+    "format:css": "prettier --write '**/*.scss'",
+    "format": "prettier --write '**/*.{js,json}'",
+    "lint:js": "eslint '**/*.js'",
+    "fix:js": "eslint --fix '**/*.js'",
+    "lint:html": "eslint '**/*.html'"
   },
   "repository": {
     "type": "git",

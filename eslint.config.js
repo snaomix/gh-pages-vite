@@ -6,12 +6,12 @@ import eslintConfigPrettier from "eslint-config-prettier";
 export default [
   {
     ...js.configs.recommended,
-    files: ['**/*.js'],
+    files: ["**/*.js"],
     languageOptions: {
       sourceType: "module",
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
       },
     },
   },
@@ -27,8 +27,9 @@ export default [
       "html/attrs-newline": "off",
       "html/indent": ["error", 2],
       "html/require-closing-tags": ["error"],
-      "html/no-extra-spacing-attrs": ["error", { "enforceBeforeSelfClose": true }],
+      "html/no-extra-spacing-attrs": ["error", { enforceBeforeSelfClose: true }],
     },
   },
   eslintConfigPrettier,
+  { ignores: ["**/dist/", "**/node_modules/", "**/.git/", "**/.github/"] },
 ];

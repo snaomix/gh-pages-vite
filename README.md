@@ -25,25 +25,47 @@ cd gh-pages-vite
 npm install
 ```
 
-ウェブサイトをビルド＆ローカルでテスト:
-```bash
-npm run build
-npm run preview
-```
+## scripts
 
-ウェブサイトをdevモードで起動:
+### 開発
+
+開発サーバーを起動（localhost:8080）
 ```bash
 npm run dev
 ```
+
+ネットワーク接続可能な開発サーバーを起動
+```bash
+npm run dev:host
+```
+
+### ビルド
+
+本番用にビルド（dist ディレクトリに出力）
+```bash
+npm run build
+```
+
+ビルド結果をプレビュー
+```bash
+npm run preview
+```
+
+### リント・フォーマット
 
 Sass(SCSS)をチェックする([Stylelint])
 ```bash
 npm run lint:css
 ```
 
-Sass(SCSS)をチェックする([Prettier])
+Sass(SCSS)のフォーマットチェック([Prettier])
 ```bash
 npm run check:css
+```
+
+Sass(SCSS)を自動修正([Stylelint]) :warning: ファイルが上書きされます
+```bash
+npm run fix:css
 ```
 
 HTMLをチェックする([ESLint])
@@ -54,6 +76,16 @@ npm run lint:html
 JSをチェックする([ESLint])
 ```bash
 npm run lint:js
+```
+
+JS, JSONのフォーマットチェック([Prettier])
+```bash
+npm run check:js
+```
+
+JSを自動修正([ESLint]) :warning: ファイルが上書きされます
+```bash
+npm run fix:js
 ```
 
 Sass(SCSS)を整形する([Prettier]) :warning: ファイルが上書きされます
