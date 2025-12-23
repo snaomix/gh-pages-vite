@@ -35,7 +35,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@fullhuman/postcss-purgecss": "^7.0.2",
-    "@html-eslint/eslint-plugin": "^0.51.0",
+    "@html-eslint/eslint-plugin": "^0.52.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.7.4",
