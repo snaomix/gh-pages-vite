@@ -5,7 +5,7 @@ export default {
   rules: {
     "number-max-precision": 6,
     "scss/load-partial-extension": "never",
-    "scss/at-import-partial-extension": null,
+    "scss/at-import-partial-extension-disallowed-list": [".scss"],
     "value-keyword-case": [
       "lower",
       {
