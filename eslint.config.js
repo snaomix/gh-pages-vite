@@ -3,10 +3,12 @@ import js from "@eslint/js";
 import globals from "globals";
 import eslintConfigPrettier from "eslint-config-prettier";
 
+/** @type {import("eslint").Linter.Config[]} */
 export default [
+  { ignores: ["**/dist/", "**/node_modules/", "**/.git/", "**/.github/"] },
   {
-    ...js.configs.recommended,
     files: ["**/*.js"],
+    ...js.configs.recommended,
     languageOptions: {
       sourceType: "module",
       globals: {
@@ -16,12 +18,9 @@ export default [
     },
   },
   {
-    ...html.configs.recommended,
     files: ["**/*.html"],
-    plugins: {
-      html,
-    },
-    language: "html/html",
+    ...html.configs.recommended,
+    plugins: { html },
     rules: {
       ...html.configs.recommended.rules,
       "html/attrs-newline": "off",
@@ -31,5 +30,4 @@ export default [
     },
   },
   eslintConfigPrettier,
-  { ignores: ["**/dist/", "**/node_modules/", "**/.git/", "**/.github/"] },
 ];

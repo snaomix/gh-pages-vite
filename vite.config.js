@@ -1,9 +1,7 @@
-import { resolve } from "path";
-
+/** @type {import('vite').UserConfig} */
 export default {
-  root: resolve(__dirname, "src"),
+  root: "src",
   base: "/gh-pages-vite/",
-  entry: resolve(__dirname, "src/index.js"),
   build: {
     outDir: "../dist",
     emptyOutDir: true,
