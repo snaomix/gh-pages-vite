@@ -21,6 +21,7 @@ export default [
     files: ["**/*.html"],
     ...html.configs.recommended,
     plugins: { html },
+    language: "html/html",
     rules: {
       ...html.configs.recommended.rules,
       "html/attrs-newline": "off",
