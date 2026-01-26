@@ -1,4 +1,4 @@
-import { purgeCSSPlugin } from "@fullhuman/postcss-purgecss";
+import purgeCSSPlugin from "@fullhuman/postcss-purgecss";
 
 /** @type {import('postcss-load-config').Config} */
 export default {
