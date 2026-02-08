@@ -10,7 +10,7 @@ Viteの[ガイド]、[静的サイトのデプロイ]ページにしたがって
 * Vite v7以降を使用しています
 * Node.js v24以降(see [Node.js release schedule])
 * [GitHub Actions]を使用してデプロイ
-* [Stylelint]、[Prettier]、[ESLint]を使用(HTMLHintによるチェック廃止)
+* [Stylelint]、[Prettier]、[ESLint]を使用
 
 ## how to start
 
