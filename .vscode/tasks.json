@@ -1,0 +1,87 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Podman: Preview Production Build",
+      "type": "shell",
+      "command": "podman run --rm -it --name gh-pages-vite-preview -p 4173:4173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview -- --port 4173 --host 0.0.0.0'",
+      "group": { "kind": "build" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Docker: Preview Production Build",
+      "type": "shell",
+      "command": "docker run --rm -it --name gh-pages-vite-preview -p 4173:4173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview -- --port 4173 --host 0.0.0.0'",
+      "group": { "kind": "build" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Podman: Start Dev Server",
+      "type": "shell",
+      "command": "podman run --rm -it --name gh-pages-vite-app -p 5173:5173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host -- --host 0.0.0.0",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Docker: Start Dev Server",
+      "type": "shell",
+      "command": "docker run --rm -it --name gh-pages-vite-app -p 5173:5173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host -- --host 0.0.0.0",
+      "group": { "kind": "build" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Podman: Run All Lint/Format",
+      "type": "shell",
+      "command": "podman exec -it gh-pages-vite-app sh -c 'npm run format && npm run format:css && npm run check:js && npm run check:css && npm run fix:js && npm run fix:css && npm run lint:js && npm run lint:css && npm run lint:html'",
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "showReuseMessage": true
+      }
+    },
+    {
+      "label": "Docker: Run All Lint/Format",
+      "type": "shell",
+      "command": "docker exec -it gh-pages-vite-app sh -c 'npm run format && npm run format:css && npm run check:js && npm run check:css && npm run fix:js && npm run fix:css && npm run lint:js && npm run lint:css && npm run lint:html'",
+      "group": { "kind": "test" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "showReuseMessage": true
+      }
+    }
+  ]
+}
