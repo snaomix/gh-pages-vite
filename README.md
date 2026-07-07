@@ -11,7 +11,8 @@ Viteの[ガイド]、[静的サイトのデプロイ]ページにしたがって
 * Node.js v24以降(see [Node.js release schedule])
 * [GitHub Actions]を使用してデプロイ
 * [Stylelint]、[Prettier]、[ESLint]を使用
-* 開発環境をコンテナ化済（[Podman] / Docker 対応・`node:24-slim` ベース）
+* コンテナ化対応（[Podman] / Docker ・`node:24-slim` ベース）
+* VS Code「[Dev Containers]」対応
 
 ## how to start
 
@@ -20,9 +21,32 @@ Viteの[ガイド]、[静的サイトのデプロイ]ページにしたがって
 git clone git@github.com:snaomix/gh-pages-vite.git
 ```
 
-nodeパッケージをインストール
+ディレクトリ移動:
 ```bash
 cd gh-pages-vite
+```
+
+## how to setup
+
+### コンテナ開発する場合
+
+#### 前提条件
+- **コンテナ実行環境（[Podman] または Docker）が利用可能であること**
+- VS Code、VS Codeの拡張機能: [Dev Containers]をインストール＆有効化
+
+1. VS Code を開きます。
+2. コマンドパレット（`⌘+Shift+P`）を開き、`Dev Containers: Reopen in Container` を選択します。
+
+#### 注意点
+- Dockerfile、.dockerignoreは開発用ではありません
+
+### ホストPC（ローカル環境）で開発する場合
+
+#### 前提条件
+- Node.jsがインストール済み
+
+1. nodeパッケージをインストール
+```bash
 npm install
 ```
 
@@ -50,6 +74,11 @@ npm run build
 ビルド結果をプレビュー
 ```bash
 npm run preview
+```
+
+ビルド結果をプレビュー（ネットワーク経由）
+```bash
+npm run preview:host
 ```
 
 ### リント・フォーマット
@@ -100,14 +129,13 @@ JS, JSONを整形する([Prettier]) :warning: ファイルが上書きされま�
 npm run format
 ```
 
-### コンテナ開発を行う場合
+### Dockerfile・.dockerignore について
 
-#### 前提条件
-- **コンテナ実行環境（Podman または Docker）が利用可能であること**
-- VS Code（Visual Studio Code）を使用していること
-- git clone済み
+:warning: 開発時には使用しません
+- Dockerfile: 配布用イメージの作成
+- .dockerignore: イメージビルド時に、ローカルの不要なファイル（node_modules等）をコンテナ内にコピーさせないための除外リスト
 
-1. コンテナイメージのビルド
+1. コンテナイメージのビルド([podman]利用時の手順)
 ```bash
 podman build -t gh-pages-vite-image .
 ```
@@ -153,6 +181,7 @@ anchore/sbom-action/download-syft@*
 [Node.js release schedule]: https://github.com/nodejs/release#release-schedule
 [anchore/sbom-action]: https://github.com/anchore/sbom-action
 [Podman]: https://podman.io/
+[Dev Containers]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 ## more info
 

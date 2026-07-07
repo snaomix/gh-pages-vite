@@ -8,6 +8,7 @@
     "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
+    "preview:host": "vite preview --host",
     "lint:css": "stylelint **/*.scss",
     "fix:css": "stylelint --fix **/*.scss",
     "check:css": "prettier --check '**/*.scss'",

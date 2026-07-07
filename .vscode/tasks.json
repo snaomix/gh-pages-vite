@@ -6,7 +6,7 @@
     {
       "label": "Podman: Preview Production Build",
       "type": "shell",
-      "command": "podman run --rm -it --name gh-pages-vite-preview -p 4173:4173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview -- --port 4173 --host 0.0.0.0'",
+      "command": "podman run --rm -it --name gh-pages-vite-app -p 4174:4174 -v \"${workspaceFolder}\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview:host'",
       "group": { "kind": "build" },
       "presentation": {
         "echo": true,
@@ -19,7 +19,7 @@
     {
       "label": "Docker: Preview Production Build",
       "type": "shell",
-      "command": "docker run --rm -it --name gh-pages-vite-preview -p 4173:4173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview -- --port 4173 --host 0.0.0.0'",
+      "command": "docker run --rm -it --name gh-pages-vite-app -p 4174:4174 -v \"${workspaceFolder}\":/app -v /app/node_modules gh-pages-vite-image sh -c 'npm run build && npm run preview:host'",
       "group": { "kind": "build" },
       "presentation": {
         "echo": true,
@@ -32,7 +32,7 @@
     {
       "label": "Podman: Start Dev Server",
       "type": "shell",
-      "command": "podman run --rm -it --name gh-pages-vite-app -p 5173:5173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host -- --host 0.0.0.0",
+      "command": "podman run --rm -it --name gh-pages-vite-app -p 5174:5174 -v \"${workspaceFolder}\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host",
       "group": { "kind": "build", "isDefault": true },
       "presentation": {
         "echo": true,
@@ -46,7 +46,7 @@
     {
       "label": "Docker: Start Dev Server",
       "type": "shell",
-      "command": "docker run --rm -it --name gh-pages-vite-app -p 5173:5173 -v \"$(pwd)\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host -- --host 0.0.0.0",
+      "command": "docker run --rm -it --name gh-pages-vite-app -p 5174:5174 -v \"${workspaceFolder}\":/app -v /app/node_modules gh-pages-vite-image npm run dev:host",
       "group": { "kind": "build" },
       "presentation": {
         "echo": true,
