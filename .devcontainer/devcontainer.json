@@ -17,7 +17,9 @@
   "forwardPorts": [4174, 5174],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm ci",
+  // NOTE: This container operates in UTC to ensure environment consistency.
+  // Generated files will have UTC timestamps, which might differ from your local machine's time.
+  "postCreateCommand": "npm ci && apt-get update && apt-get install -y openssh-client",
 
   // Configure tool-specific properties.
   "customizations": {

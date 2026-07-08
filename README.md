@@ -35,7 +35,7 @@ cd gh-pages-vite
 - VS Code、VS Codeの拡張機能: [Dev Containers]をインストール＆有効化
 
 1. VS Code を開きます。
-2. コマンドパレット（`⌘+Shift+P`）を開き、`Dev Containers: Reopen in Container` を選択します。
+2. コマンドパレット（`Cmd + Shift + P`、Windowsは `Ctrl + Shift + P`）を開き、`Dev Containers: Reopen in Container` を選択します。
 
 #### 注意点
 - Dockerfile、.dockerignoreは開発用ではありません
@@ -132,8 +132,8 @@ npm run format
 ### Dockerfile・.dockerignore について
 
 :warning: 開発時には使用しません
-- Dockerfile: 配布用イメージの作成
-- .dockerignore: イメージビルド時に、ローカルの不要なファイル（node_modules等）をコンテナ内にコピーさせないための除外リスト
+- [Dockerfile](/Dockerfile): 配布用イメージの作成
+- [.dockerignore](/.dockerignore): イメージビルド時に、ローカルの不要なファイル（node_modules等）をコンテナ内にコピーさせないための除外リスト
 
 1. コンテナイメージのビルド([podman]利用時の手順)
 ```bash
@@ -141,7 +141,7 @@ podman build -t gh-pages-vite-image .
 ```
 
 2. コンテナ環境で開発サーバ起動
-- VS Codeを開いた状態で、キーボードの Cmd + Shift + B（Windowsは Ctrl + Shift + B）
+- VS Codeを開いた状態で、キーボードの `Cmd + Shift + B`（Windowsは `Ctrl + Shift + B`）
 
 ## setting GitHub Actions & run workflow
 1. GitHub Freeの場合、パブリックリポジトリに設定しておく
