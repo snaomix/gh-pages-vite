@@ -39,7 +39,7 @@
     "@html-eslint/eslint-plugin": "^0.64.0",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
-    "globals": "^17.8.0",
+    "globals": "^17.9.0",
     "prettier": "^3.9.6",
     "sass": "^1.102.0",
     "sass-embedded": "^1.100.0",
