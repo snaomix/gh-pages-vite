@@ -6,8 +6,10 @@ const isContainer =
 
 const isHostOptionPassed = process.argv.includes("--host") || process.argv.includes("-h");
 
-const currentPort = isHostOptionPassed ? 5174 : undefined;
-const defaultHost = isHostOptionPassed ? "0.0.0.0" : "127.0.0.1";
+const defaultHost = isContainer || isHostOptionPassed ? "0.0.0.0" : "127.0.0.1";
+
+const currentPort = isContainer ? 5174 : undefined;
+const prevPort = isContainer ? 4174 : undefined;
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -39,6 +41,6 @@ export default defineConfig({
   },
   preview: {
     host: defaultHost,
-    port: isHostOptionPassed ? 4174 : undefined,
+    port: prevPort,
   },
 });
